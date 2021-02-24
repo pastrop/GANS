@@ -6,8 +6,8 @@ This is a very basic GAN model based on fully connected network.  This is not so
 **Model Package** - gan_dnn</br>
 **Model Class**  - GAN_MLP()</br> 
 *Example*</br> 
-'''
+```
    from gan_dnn import model</br> 
    example_model = model.GAN_MLP()</br> 
-'''
+```
    
