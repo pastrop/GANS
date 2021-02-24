@@ -3,7 +3,6 @@ from torch import nn
 # Custom Imports
 from . import gen
 from . import desc
-#from . import ns
 class GAN_MLP():
   '''
   GAN based on Sequential Network Architecture
