@@ -4,10 +4,21 @@ This project is inspired by the *Huggingface*. While working on projects unrelat
 This is a very basic GAN model based on fully connected network.  This is not something anyone would ever use in producting yet it is pretty useful if for building an overall understanding of generative adversarial network.  The model demonstrates decent performance on MNIST dataset (28x28 pixels images). Using GPU is highly recommended, minimum 100 iterations are suggested
 ### User Manual (work in progress)
 **Model Package** - gan_dnn</br>
-**Model Class**  - GAN_MLP()</br> 
-*Example*</br> 
+**Model Class**  - GAN_MLP(z_dim = 64, lr = 0.00001,device = 'cpu')</br> 
+*z_dim* - noize vector dimensionality</br>
+*lr* - learning rate</br>
+*device* - 'gpu' or 'tpu' is recommended</br>
+*Example: Initialzing*</br> 
 ```
 from gan_dnn import model
 example_model = model.GAN_MLP()
 ```
+**Methods & Method Signatures**</br> 
+
+
+
+**Dependencies**
+*Torch*</br>
+*Torchvision & Pyplot* - if you want to have vizualization</br>
+
    
