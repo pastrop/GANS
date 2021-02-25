@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
        # the name must match the folder name 
-        name="gan_dnn", 
+        name="gans", 
         version= '0.1',
         author="Alex",
         author_email="pas_trop2003@yahoo.com",
