@@ -3,6 +3,7 @@ This project is inspired by the *Huggingface*. While working on projects unrelat
 ## Sequence GAN
 This is a very basic GAN model based on fully connected network.  This is not something anyone would ever use in producting yet it is pretty useful if for building an overall understanding of generative adversarial network.  The model demonstrates decent performance on MNIST dataset (28x28 pixels images). Using GPU is highly recommended, minimum 100 iterations are suggested
 ### User Manual (work in progress)
+**Installation from Github(currently from develop branch)** - ```pip install git+https://github.com/pastrop/GANS.git@develop#egg=GANS```
 **Model Package** - gan_dnn</br>
 **Model Class**  - GAN_MLP(z_dim = 64, lr = 0.00001,device = 'cpu')</br> 
 *z_dim* - noize vector dimensionality</br>
