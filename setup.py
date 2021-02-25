@@ -7,7 +7,7 @@ setup(
         author="Alex",
         author_email="pas_trop2003@yahoo.com",
         description='Sequence GAN',
-        packages=['gan_dnn'],
+        packages=['GANS'],
         install_requires=[], # add any additional packages that 
         # needs to be installed along with your package. Eg: 'caer'
         
