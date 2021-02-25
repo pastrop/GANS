@@ -15,6 +15,6 @@ setup(
         classifiers= [
             "Development Status :: 1 - Planning",
             "Intended Audience :: All",
-            "Programming Language :: Python :: 3",
+            "Programming Language :: Python :: 3.6",
         ]
 )
