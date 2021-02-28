@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 # Custom Imports
 from . import gen
 from . import desc
+from . import gen_dcgan
+from . import desc_dcgan
+
 class GAN_MLP():
   '''
   GAN based on Sequential Network Architecture
@@ -93,3 +96,53 @@ class GAN_MLP():
     loss_real = self.criterion(disc_output_real,torch.ones_like(disc_output_real))
     disc_loss = (loss_fake+loss_real)/2
     return disc_loss
+
+
+class GAN_DCGAN():
+  '''
+  GAN based on Sequential Network Architecture
+  Values:
+  '''
+  def __init__(self, z_dim = 64, lr = 0.0002, beta1 = 0.5, beta2 = 0.999, device = 'cpu'):
+    self.z_dim = z_dim
+    self.lr = lr
+    self.beta1 = beta1
+    self.beta2 = beta2
+    self.device = device
+    self.gen_dcgan = gen_dcgan.Generator_dcgan(z_dim).to(device)
+    self.gen_opt = torch.optim.Adam(self.gen_dcgan.parameters(), lr=self.lr, betas=(self.beta1, self.beta2))
+    self.disc_dcgan = desc_dcgan.Discriminator_dcgan().to(device) 
+    self.disc_opt = torch.optim.Adam(self.disc_dcgan.parameters(), lr=self.lr, betas=(self.beta1, self.beta2))
+    self.criterion = nn.BCEWithLogitsLoss()
+    self.gen_dcgan = self.gen_dcgan.apply(weights_init)
+    self.disc_dcgan = self.disc_dcgan.apply(weights_init)
+
+  def show_tensor_images(self, image_tensor, num_images=25, size=(1, 28, 28)):
+    '''
+    Function for visualizing images: Given a tensor of images, number of images, and
+    size per image, plots and prints the images in a uniform grid.
+    '''
+    image_unflat = image_tensor.detach().cpu().view(-1, *size)
+    image_grid = make_grid(image_unflat[:num_images], nrow=5)
+    plt.imshow(image_grid.permute(1, 2, 0).squeeze())
+    plt.show()
+
+  def get_noise(self, n_samples):
+    '''
+    Function for creating noise vectors: Given the dimensions (n_samples, z_dim)
+    creates a tensor of that shape filled with random numbers from the normal distribution.
+    Parameters:
+        n_samples: the number of samples to generate, a scalar
+        z_dim: the dimension of the noise vector, a scalar
+        device: the device type
+    '''
+    return torch.randn(n_samples, self.z_dim, device=self.device)
+
+# Weights are initialized to the normal distribution
+# with mean 0 and standard deviation 0.02
+def weights_init(m):
+    if isinstance(m, nn.Conv2d) or isinstance(m, nn.ConvTranspose2d):
+        torch.nn.init.normal_(m.weight, 0.0, 0.02)
+    if isinstance(m, nn.BatchNorm2d):
+        torch.nn.init.normal_(m.weight, 0.0, 0.02)
+        torch.nn.init.constant_(m.bias, 0)      
