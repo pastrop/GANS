@@ -1,7 +1,7 @@
 # GANS
 This project is inspired by the *Huggingface*. While working on projects unrelated to NLP, I really miss great documentation and well-thought APIs that Hugginface contirbuted to the NLP echosystem. I therefore decided to start the project focused on image processing. The overall idea is to collect (if exist) or to create a a bunch of image models with easy to use APIs and decent documentation as installable Python packages.  All code is in PyTorch.  
 ## Sequence GAN
-The first model available is a very basic GAN  based on fully connected network architecture.  This is not something anyone would ever use in production yet it is useful if for building an overall understanding of generative adversarial network.  The model demonstrates decent performance on MNIST dataset (28x28 pixels images). Using GPU is highly recommended, minimum 100 iterations are suggested
+The first model available is a very basic GAN  based on fully connected network architecture.  This is not something anyone would ever use in production yet it is useful if for building an overall understanding of generative adversarial network.  The model demonstrates decent performance on MNIST dataset (28x28 pixels images). Using GPU is highly recommended, minimum 100 epochs are suggested
 ### User Manual (work in progress)
 **Installation from Github(currently from develop branch)** - </br> 
 ```pip install git+https://github.com/pastrop/GANS.git@develop#egg=GANS```</br>
