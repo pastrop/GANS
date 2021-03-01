@@ -17,8 +17,8 @@ example_model = model.GAN_MLP(device = 'gpu')
 ```
 **Methods & Variables**</br> 
 example_model.gen_opt - holds the generator gradient (Adam is used)</br>
-example_model.desc_opt - holds the descriminator gradient (Adam is used)</br>
-example_model.get_disc_loss(batch_size, batch_of_real_images) - calculates descriminator loss
+example_model.desc_opt - holds the discriminator gradient (Adam is used)</br>
+example_model.get_disc_loss(batch_size, batch_of_real_images) - calculates discriminator loss
 example_model.get_gen_loss(batch_size) - calculates generator loss
 
 *Example: Calling Methods & Using Class Variables*</br> 
