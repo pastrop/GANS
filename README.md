@@ -13,7 +13,7 @@ The first model available is a very basic GAN  based on fully connected network 
 *Example: Initialzing*</br> 
 ```
 from GANS import model
-example_model = model.GAN_MLP(device = 'gpu')
+example_model = model.GAN_MLP(device = 'cuda')
 ```
 **Methods & Variables**</br> 
 example_model.gen_opt - holds the generator gradient (Adam is used)</br>
