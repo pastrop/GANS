@@ -4,7 +4,7 @@ This project is inspired by the *Huggingface*. While working on projects unrelat
 The first model available is a very basic GAN  based on fully connected network architecture.  This is not something anyone would ever use in production yet it is useful if for building an overall understanding of generative adversarial network.  The model demonstrates decent performance on MNIST dataset (28x28 pixels images). Using GPU is highly recommended, minimum 100 iterations are suggested
 ### User Manual (work in progress)
 **Installation from Github(currently from develop branch)** - </br> 
-```pip install git+https://github.com/pastrop/GANS.git@main#egg=GANS```</br>
+```pip install git+https://github.com/pastrop/GANS.git@develop#egg=GANS```</br>
 **Model Package** - GANS</br>
 **Model Class**  - GAN_MLP(z_dim = 64, lr = 0.00001,device = 'cpu')</br> 
 *z_dim* - noize vector dimensionality</br>
